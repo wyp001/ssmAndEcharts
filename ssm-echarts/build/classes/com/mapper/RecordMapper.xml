@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.RecordMapper">
+   <select id="selecMore" parameterType="Record" resultType="Record">
+        select taizhan_num,tem,hum,pa,rain,win_dir,win_sp,dateStr,DATE_FORMAT(date,'%Y-%m-%d %H:%i:%s')date from alldata  
+		where taizhan_num ="A0001"
+		and date &gt;="2017-03-08 00:00:00"
+		and date  &lt;=NOW()
+		order by date asc
+   </select>
+</mapper>
